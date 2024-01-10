@@ -9,9 +9,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
  */
 //Sizes
 const sizes = {
-  sm: { icon: 8, button: 24 },
-  md: { icon: 16, button: 40 },
-  lg: { icon: 32, button: 56 },
+  md: { icon: 24, button: 48 },
+  lg: { icon: 32, button: 64 },
 };
 
 //Colors
@@ -36,7 +35,7 @@ const colors = {
 interface IconButtonProps {
   onPress?: () => void;
   icon?: keyof typeof Ionicons.glyphMap;
-  size?: "sm" | "md" | "lg";
+  size?: "md" | "lg";
   color?: "primary" | "secondary";
 }
 
