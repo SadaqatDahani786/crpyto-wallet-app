@@ -18,11 +18,23 @@ const variants = {
   },
   Subtitle1: {
     fontSize: 18,
-    fontWeight: "normal",
+    fontWeight: "bold",
   },
   Subtitle2: {
     fontSize: 16,
+    fontWeight: "bold",
+  },
+  Body1: {
+    fontSize: 18,
     fontWeight: "normal",
+  },
+  Body2: {
+    fontSize: 16,
+    fontWeight: "normal",
+  },
+  Pill: {
+    fontSize: 12,
+    fontWeight: "bold",
   },
 };
 
@@ -41,7 +53,14 @@ const colors = {
  */
 interface TypographyProps {
   children: React.ReactNode;
-  variant?: "H1" | "H2" | "Subtitle1" | "Subtitle2";
+  variant?:
+    | "H1"
+    | "H2"
+    | "Subtitle1"
+    | "Subtitle2"
+    | "Body1"
+    | "Body2"
+    | "Pill";
   color?: "white" | "black" | "primary" | "secondary";
   uppercase?: "true" | true | "false" | false | "default";
   textAlign?: "center" | "left" | "right";
@@ -54,7 +73,7 @@ interface TypographyProps {
  */
 const Typographhy = ({
   children,
-  variant = "Subtitle1",
+  variant = "Body2",
   color = "black",
   uppercase = "default",
   textAlign = "left",
