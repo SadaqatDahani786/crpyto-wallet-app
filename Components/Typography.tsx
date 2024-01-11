@@ -42,8 +42,15 @@ const variants = {
 const colors = {
   white: theme.palette.common.white,
   black: theme.palette.common.black,
+  "gray-dark": theme.palette.common.gray[200],
+  gray: theme.palette.common.gray[400],
+  "gray-light": theme.palette.common.gray[500],
   primary: theme.palette.primary.main,
   secondary: theme.palette.secondary.main,
+  danger: theme.palette.accent.danger,
+  success: theme.palette.accent.success,
+  info: theme.palette.accent.info,
+  warn: theme.palette.accent.warn,
 };
 
 /*
@@ -61,7 +68,18 @@ interface TypographyProps {
     | "Body1"
     | "Body2"
     | "Pill";
-  color?: "white" | "black" | "primary" | "secondary";
+  color?:
+    | "white"
+    | "black"
+    | "gray"
+    | "gray-light"
+    | "gray-dark"
+    | "primary"
+    | "secondary"
+    | "danger"
+    | "success"
+    | "warn"
+    | "info";
   uppercase?: "true" | true | "false" | false | "default";
   textAlign?: "center" | "left" | "right";
 }
