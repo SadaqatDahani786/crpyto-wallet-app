@@ -45,11 +45,16 @@ const styles = StyleSheet.create({
     width: "70%",
     margin: "auto",
     justifyContent: "center",
-    flex: 3,
+    flex: 1,
   },
   imageWrapper: {
-    flex: 2,
+    width: "100%",
+    height: 180,
     overflow: "hidden",
   },
-  image: {},
+  image: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  },
 });
