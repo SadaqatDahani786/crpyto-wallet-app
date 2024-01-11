@@ -35,7 +35,7 @@ export default Header;
  */
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.dark,
     width: "100%",
     height: 340,
     alignItems: "center",
