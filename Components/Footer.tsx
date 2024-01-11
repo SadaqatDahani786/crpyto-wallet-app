@@ -44,8 +44,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingLeft: theme.spacing * 3,
     paddingRight: theme.spacing * 3,
-    position: "absolute",
-    zIndex: 1,
-    bottom: 0,
   },
 });
