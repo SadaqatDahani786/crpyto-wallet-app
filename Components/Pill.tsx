@@ -26,8 +26,8 @@ const colors = {
  */
 interface PillProps {
   children: React.ReactNode;
-  color: "primary";
-  onPress: () => void;
+  color?: "primary";
+  onPress?: () => void;
 }
 
 /*
