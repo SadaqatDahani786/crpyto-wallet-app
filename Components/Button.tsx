@@ -35,6 +35,7 @@ interface ButtonProps {
   size?: "sm" | "md" | "lg";
   variant?: "text" | "outlined" | "contained";
   color?: "primary" | "secondary";
+  corners?: "none" | "rounded" | "full rounded";
 }
 
 /*
@@ -46,6 +47,7 @@ const Button = ({
   size = "sm",
   variant = "contained",
   color = "primary",
+  corners = "rounded",
   children,
 }: ButtonProps) => {
   /*
@@ -56,11 +58,13 @@ const Button = ({
   const selectedSizes = sizes[size];
   const selectedColors = theme.palette[color];
   const selectedStyles = {
-    text: variant === "contained" ? "black" : "primary",
+    text: variant === "contained" ? "white" : color,
     bg: variant === "contained" ? selectedColors.main : undefined,
     borderColor: variant === "outlined" ? selectedColors.main : undefined,
     borderWidth: variant === "outlined" ? 1 : undefined,
-    acitve: selectedColors.alpha,
+    acitve: selectedColors.light,
+    borderRadius:
+      corners === "rounded" ? 8 : corners === "full rounded" ? 10000 : 0,
   };
 
   return (
@@ -73,6 +77,7 @@ const Button = ({
           backgroundColor: selectedStyles.bg,
           minWidth: selectedSizes.width,
           height: selectedSizes.height,
+          borderRadius: selectedStyles.borderRadius,
         },
       ]}
     >
@@ -82,10 +87,10 @@ const Button = ({
       >
         <Typographhy
           textAlign="center"
-          color={selectedStyles.text as "primary" | "black"}
+          color={selectedStyles.text as "primary" | "secondary" | "white"}
           variant={selectedSizes.textVariant}
         >
-          {children} 2423
+          {children}
         </Typographhy>
       </Pressable>
     </View>
@@ -101,7 +106,6 @@ export default Button;
  */
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 8,
     overflow: "hidden",
   },
   presser: {
